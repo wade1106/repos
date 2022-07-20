@@ -1,1 +1,35 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/wallet
+    username: klay
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    separator: //
+#MyBatis-Plus配置
+mybatis-plus:
+  # 需要额外定義的Mybatis XML文件放在resource目錄classpath:mybatis/*.xml
+  mapper-locations: classpath:mybatis/*.xml
+  # PO實體類掃描包路徑，多個package用逗號分割
+  typeAliasesPackage: com.mech.microservice.dao.model
+  #Mybatis-Plus處理PostGis類型映射問题
+  typeHandlersPackage: com.eyougo.mybatis.postgis.type
+  global-config:
+    db-config:
+      #主鍵類型
+      id-type: auto
+      #欄位策略
+      field-strategy: not_empty
+      #駝峰下滑線轉換
+      column-underline: true
+      #邏輯刪除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: postgresql
+    refresh: false
+  configuration:
+    #開啟此配置會自動將下滑線格式的欄位名稱，轉換為以駝峰命名的屬性
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    #日誌配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
