@@ -11,7 +11,7 @@ mybatis-plus:
   # 需要额外定義的Mybatis XML文件放在resource目錄classpath:mybatis/*.xml
   mapper-locations: classpath:mybatis/*.xml
   # PO實體類掃描包路徑，多個package用逗號分割
-  typeAliasesPackage: com.mech.microservice.dao.model
+  typeAliasesPackage: com.mech.wallet.dao.model
   #Mybatis-Plus處理PostGis類型映射問题
   typeHandlersPackage: com.eyougo.mybatis.postgis.type
   global-config:
